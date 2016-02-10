@@ -48,3 +48,4 @@ $ vlc rtsp://127.0.0.1:5554/MyVideo
 ```
 $ ./tceditor.sh
 ```
+![Screenshot of the traffic-control-rkt demo](traffic-control-rkt.png)
