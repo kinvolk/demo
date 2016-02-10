@@ -1,5 +1,7 @@
 # Demo: traffic control on a RTSP server in a rkt pod
 
+This demo simulates varying network issues with Linux traffic control between a RTP/RTSP media server running in the rkt container runtime and a video player.
+
 ## Install software
 
 - Install [rkt 1.0](https://github.com/coreos/rkt/releases/tag/v1.0.0)
