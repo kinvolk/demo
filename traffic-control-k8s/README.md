@@ -70,6 +70,8 @@ And save the following bookmarks in your browser:
 - Click on the new "Traffic Control" buttons
 - See how it changes the latency
 
+![Screenshot of the traffic-control-k8s-ping demo](traffic-control-k8s-ping.png)
+
 ## Demo 2
 
 - Go to "Demo Guestbook V1" in the browser
@@ -88,6 +90,8 @@ And save the following bookmarks in your browser:
 cd potato-test
 ginkgo
 ```
+
+![Screenshot of the traffic-control-k8s-ginkgo demo](traffic-control-k8s-ginkgo.png)
 
 ## Delete
 
