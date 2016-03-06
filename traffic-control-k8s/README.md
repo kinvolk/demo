@@ -34,6 +34,8 @@ The Weave Scope yaml files originally come from [Weavescope](https://github.com/
 - set fixed virtual IP in Kubernetes services.
 - use a version of Scope with patches for traffic control, see https://github.com/weaveworks/scope/issues/1022
 
+TODO: For now, the patches are on https://github.com/alban/scope (branch master). Once Scope has a plugin system, the patches should be updated to use that.
+
 ## Install the simple "ping" app
 
 ```
