@@ -47,6 +47,7 @@ kubectl --kubeconfig=$KUBECFG create -f guestbook-all-in-one.yaml
 ```
 
 This is based on the [Kubernetes Guestbook Example](https://github.com/kubernetes/kubernetes/tree/master/examples/guestbook) but it exposes two different versions of the frontend.
+The sources of the two versions are available in [frontend-php-redis/](frontend-php-redis/)
 
 ## Prepare your browser for the demo
 
@@ -56,9 +57,37 @@ ssh -L 4042:10.3.0.131:4040 -L 8082:10.3.0.143:80 -L 8083:10.3.0.144:80  c1
 ```
 
 And save the following bookmarks in your browser:
-- "Demo Scope": http://localhost:4042/
-- "Demo Guestbook V1": http://localhost:8082/
-- "Demo Guestbook V2": http://localhost:8083/
+- "Demo Scope": [http://localhost:4042/](http://localhost:4042/)
+- "Demo Guestbook V1": [http://localhost:8082/](http://localhost:8082/)
+- "Demo Guestbook V2": [http://localhost:8083/](http://localhost:8083/)
+
+## Demo 1
+
+- Go to "Demo Scope" in the browser
+- Locate a "ping" pod
+- Click on the "Attach" button
+- Notice that it downloads the file every 2 seconds quite quickly
+- Click on the new "Traffic Control" buttons
+- See how it changes the latency
+
+## Demo 2
+
+- Go to "Demo Guestbook V1" in the browser
+- Add some messages in the guestbook
+- Locate the frontend pod (V1)
+- Add latency
+- Notice how refreshing the guestbook page becomes slow
+- Notice that there is no user feedback whether the guestbook is fully loaded
+- Go to "Demo Guestbook V2" in the browser
+- Locate the frontend pod (V2)
+- Add latency
+- Notice that this version has user feedback
+- Run the tests on this new version:
+
+```
+cd potato-test
+ginkgo
+```
 
 ## Delete
 

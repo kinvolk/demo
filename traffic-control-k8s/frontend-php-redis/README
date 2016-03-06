@@ -1,0 +1,5 @@
+This is a copy of the Kubernetes' example app from:
+https://github.com/kubernetes/kubernetes/tree/master/examples/guestbook/php-redis
+
+- V1 is a unmodified copy
+- V2 is a modified copy for the purpose of the demo
