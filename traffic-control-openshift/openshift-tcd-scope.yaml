@@ -1,0 +1,112 @@
+apiVersion: v1
+kind: List
+items:
+- apiVersion: v1
+  kind: ReplicationController
+  metadata:
+    name: tcd
+    labels:
+      k8s-app: tcd
+  spec:
+    template:
+      metadata:
+        name:  tcd
+        labels:
+          k8s-app: tcd
+      spec:
+        hostPID: true
+        hostNetwork: true
+        containers:
+        - name:  tcd
+          image: albanc/tcd:latest
+          securityContext:
+            privileged: true
+          resources:
+            limits:
+              cpu: 50m
+          volumeMounts:
+          - name: docker-sock
+            mountPath: /var/run/docker.sock
+          - name: dbus-sock
+            mountPath: /var/run/dbus/system_bus_socket
+          - name: run
+            mountPath: /run
+        volumes:
+        - name: docker-sock
+          hostPath:
+            path: /var/run/docker.sock
+        - name: dbus-sock
+          hostPath:
+            path: /var/run/dbus/system_bus_socket
+        - name: run
+          hostPath:
+            path: /run
+- apiVersion: v1
+  kind: ReplicationController
+  metadata:
+    name: weavescope-app
+    labels:
+      provider: weavescope-app
+  spec:
+    replicas: 1
+    template:
+      metadata:
+        labels:
+          provider: weavescope-app
+      spec:
+        containers:
+        - name: weavescope-app
+          image: weaveworks/scope:0.13.1
+          args:
+          - --no-probe
+          ports:
+          - containerPort: 4040
+- apiVersion: v1
+  kind: Service
+  metadata:
+    name: weavescope-app
+    labels:
+      provider: weavescope-app
+  spec:
+    ports:
+    - name: app
+      port: 4040
+    selector:
+      provider: weavescope-app
+    clusterIP: 172.30.8.64
+- apiVersion: v1
+  kind: ReplicationController
+  metadata:
+    name: weavescope-probe
+    labels:
+      k8s-app:  weavescope-probe
+  spec:
+    template:
+      metadata:
+        name:  weavescope-probe
+        labels:
+          k8s-app:  weavescope-probe
+      spec:
+        hostPID: true
+        hostNetwork: true
+        containers:
+        - name:  weavescope-probe
+          image: weaveworks/scope:0.13.1
+          args:
+          - --no-app
+          - --probe.docker.bridge=docker0
+          - --probe.docker=true
+          - --probe.kubernetes=true
+          - "$(WEAVESCOPE_APP_SERVICE_HOST):$(WEAVESCOPE_APP_SERVICE_PORT)"
+          securityContext:
+            privileged: true
+          resources:
+            limits:
+              cpu: 50m
+          volumeMounts:
+          - name: docker-sock
+            mountPath: /var/run/docker.sock
+        volumes:
+        - name: docker-sock
+          hostPath:
+            path: /var/run/docker.sock
