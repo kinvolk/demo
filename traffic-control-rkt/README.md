@@ -4,7 +4,7 @@ This demo simulates varying network issues with Linux traffic control between a 
 
 ## Install software
 
-- Install [rkt 1.0](https://github.com/coreos/rkt/releases/tag/v1.0.0)
+- Install [rkt 1.5.0](https://github.com/coreos/rkt/releases/tag/v1.5.0)
 - Install [acbuild 0.2.2](https://github.com/appc/acbuild/releases/tag/v0.2.2)
 - Make sure you can load the kernel module `sch_netem`. In Fedora, install `kernel-modules-extra`.
 
