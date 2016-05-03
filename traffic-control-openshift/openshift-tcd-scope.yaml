@@ -56,7 +56,7 @@ items:
       spec:
         containers:
         - name: weavescope-app
-          image: weaveworks/scope:0.13.1
+          image: albanc/scope:latest
           args:
           - --no-probe
           ports:
@@ -91,7 +91,7 @@ items:
         hostNetwork: true
         containers:
         - name:  weavescope-probe
-          image: weaveworks/scope:0.13.1
+          image: albanc/scope:latest
           args:
           - --no-app
           - --probe.docker.bridge=docker0
@@ -106,7 +106,12 @@ items:
           volumeMounts:
           - name: docker-sock
             mountPath: /var/run/docker.sock
+          - name: run
+            mountPath: /run
         volumes:
         - name: docker-sock
           hostPath:
             path: /var/run/docker.sock
+        - name: run
+          hostPath:
+            path: /run
