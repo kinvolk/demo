@@ -1,0 +1,20 @@
+apiVersion: v1
+kind: ReplicationController
+metadata:
+  name: ping-test
+  labels:
+    provider: ping-test
+spec:
+  replicas: 3
+  template:
+    metadata:
+      labels:
+        provider: ping-test
+    spec:
+      containers:
+      - name: ping-test
+        image: alpine
+        args:
+        - /bin/sh
+        - -c
+        - while true ; do sleep 2 ; time wget -O /dev/null http://checkip.amazonaws.com/ ; done
