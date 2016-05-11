@@ -17,7 +17,7 @@ spec:
       hostNetwork: true
       containers:
       - name:  weave-scope-probe
-        image: albanc/scope:latest
+        image: albanc/scope:demo1
         args:
         - --no-app
         # Remove argument below if you don't use a kubernetes-specific Docker bridge (cbr0)
