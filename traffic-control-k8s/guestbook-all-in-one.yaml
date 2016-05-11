@@ -223,7 +223,7 @@ spec:
     spec:
       containers:
       - name: php-redis
-        image: albanc/gb-frontend:latest
+        image: albanc/gb-frontend:demo1
         resources:
           requests:
             cpu: 100m

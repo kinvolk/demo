@@ -18,7 +18,7 @@ items:
         hostNetwork: true
         containers:
         - name:  tcd
-          image: albanc/tcd:latest
+          image: albanc/tcd:demo1
           securityContext:
             privileged: true
           resources:
@@ -56,7 +56,7 @@ items:
       spec:
         containers:
         - name: weavescope-app
-          image: albanc/scope:latest
+          image: albanc/scope:demo1
           args:
           - --no-probe
           ports:
@@ -91,7 +91,7 @@ items:
         hostNetwork: true
         containers:
         - name:  weavescope-probe
-          image: albanc/scope:latest
+          image: albanc/scope:demo1
           args:
           - --no-app
           - --probe.docker.bridge=docker0

@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
       - name: weave-scope-app
-        image: albanc/scope:latest
+        image: albanc/scope:demo1
         args:
         - --no-probe
         ports:
