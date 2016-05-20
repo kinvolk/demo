@@ -2,7 +2,7 @@
 This demo demonstrates how to use traffic control to test applications running in [OpenShift](https://www.openshift.com/). It uses OpenShift version 3 to run the Kubernetes cluster, [tcd](https://github.com/kinvolk/tcd) to do traffic control on the Kubernetes nodes and [Weave Scope](https://github.com/weaveworks/scope) to monitor, visualize and interact with the Kubernetes cluster.
 
 ## What do you need to start?
-- Get an [OpenShift ready VM](https://github.com/kinvolk/openshift-evangelists-vagrant-origin) to run the demo. You will need to to reboot the VM after the first `vagrant up` in order to load the right kernel version and to load the modules needed by tcd.
+- Get an [OpenShift ready VM](https://github.com/kinvolk/openshift-evangelists-vagrant-origin) to run the demo. You will need to reboot the VM after the first `vagrant up` in order to load the right kernel version and to load the modules needed by tcd.
 - Get the [demo](https://github.com/kinvolk/demo) repository
 
 You can reach the OpenShift dashboard by pointing your browser to [https://10.2.2.2:8443](https://10.2.2.2:8443). Use user 'admin' and password 'admin' to login.
