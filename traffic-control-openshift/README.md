@@ -1,15 +1,13 @@
 # Traffic Control on OpenShift
-This demo demonstrates how to use traffic control to test applications running in OpenShift. It uses OpenShift version 3, tcd and Weave Scope together: OpenShift orchestration system, tcd as traffic control application, and Wave Scope as visualize and to interact with the demo. 
+This demo demonstrates how to use traffic control to test applications running in [OpenShift](https://www.openshift.com/). It uses OpenShift version 3 to run the Kubernetes cluster, [tcd](https://github.com/kinvolk/tcd) to do traffic control on the Kubernetes nodes and [Weave Scope](https://github.com/weaveworks/scope) to monitor, visualize and interact with the Kubernetes cluster.
 
 ## What do you need to start?
-- Get a OpenShift ready VM from this [repository](https://github.com/kinvolk/openshift-evangelists-vagrant-origin) to run the demo, then you have to __reboot__ the VM after the first vagrant up to load the right kernel version and to load the modules needed by tcd.
-- Get get the [demo](https://github.com/kinvolk/demo) repository
+- Get an [OpenShift ready VM](https://github.com/kinvolk/openshift-evangelists-vagrant-origin) to run the demo. You will need to to reboot the VM after the first `vagrant up` in order to load the right kernel version and to load the modules needed by tcd.
+- Get the [demo](https://github.com/kinvolk/demo) repository
 
-By using ``` vagrant up ``` you run the VM, with ``` vagrant ssh ``` you can login, and ``` vagrant halt``` stops it.
+You can reach the OpenShift dashboard by pointing your browser to [https://10.2.2.2:8443](https://10.2.2.2:8443). Use user 'admin' and password 'admin' to login.
 
-You can reach the OpenShift dashboard with your browser at [https://10.2.2.2:8443](https://10.2.2.2:8443). Use user 'admin' and password 'admin' to login, now you are in the OpenShift dashboard.
-
-For convenience you should add this to your ~/.ssh/config the output of ``` vagrant ssh-config``` and add the following lines.
+For convenience, you can add this to your ~/.ssh/config the output of ```vagrant ssh-config``` and add the following lines.
 
 ```ssh
      LocalForward 1931 172.30.8.64:4040
@@ -24,9 +22,9 @@ This will allow you to use this [http://127.0.0.1:1931](http://127.0.0.1:1931) t
 scp -r demo/traffic-control-openshift/* vagrant@<OPENSHIFT_VM_HOSTNAME>:~/
 ```
 
-
 ## Running the demo
-After you are logged into the vm you need to login into the ```oc``` command line tool using as username "admin" and password "admin" to be able to create projects and applications.
+After logging into the VM you need to login into the ```oc``` command line tool using username "admin" and password "admin" in order to create projects and applications.
+
 Example:
 
 ```
@@ -37,13 +35,13 @@ oc login https://10.2.2.2:8443
 oc new-project demo
 
 ```
-Now you are working on the project __demo__, before you can deploy the services you __need__ to set the policy as shown below.
+Now you are working on the project __demo__, before you can deploy the services you need to set the policy as shown below.
 ```
 oc adm policy add-scc-to-user privileged system:serviceaccount:demo:default
 ```
-This is necessary because tcd and weavescope-probe need to run as privileged user to use some resources e.g. hostNetwork, hostPID, and hostPath.
+This is necessary because tcd and weavescope-probe need to run as a privileged user to use some resources e.g. hostNetwork, hostPID, and hostPath.
 
-After you set up the policy, you can deploy our demo:
+After you set up the policy, you can deploy the demo:
 
 
 ```
@@ -60,7 +58,7 @@ oc create -f apps/guestbook-all-in-one.yaml
 ...
 ```
 
-The first line create a pod for our traffic control deamon with an integration for Weavescope.
-Then you create multiple pods running a simple ping application, which download a small file from a server in a loop.
-The last command deploy a guestbook application with two different versions of the frontends and a one backend.
+The first line creates a pod for our traffic control deamon with integration for Weavescope.
+Then you create multiple pods running a simple ping application, which downloads a small file from a server in a loop.
+The last command deploys a guestbook application with two different versions of the frontends and one backend.
 
