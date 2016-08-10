@@ -1,0 +1,480 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: accounts
+  labels:
+    name: accounts
+spec:
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        name: accounts
+    spec:
+      containers:
+      - name: accounts
+        image: albanc/weaveworksdemos-accounts:toronto-3
+        ports:
+        - containerPort: 80
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: accounts
+  labels:
+    name: accounts
+spec:
+  ports:
+    # the port that this service should serve on
+  - port: 80
+    targetPort: 80
+  selector:
+    name: accounts
+  clusterIP: 10.3.0.41
+---
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: accounts-db
+  labels:
+    name: accounts-db
+spec:
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        name: accounts-db
+    spec:
+      containers:
+      - name: accounts-db
+        image: albanc/weaveworksdemos-accounts-db-test:toronto-3
+        ports:
+        - name: mongo
+          containerPort: 27017
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: accounts-db
+  labels:
+    name: accounts-db
+spec:
+  ports:
+    # the port that this service should serve on
+  - port: 27017
+    targetPort: 27017
+  selector:
+    name: accounts-db
+  clusterIP: 10.3.0.42
+---
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: cart
+  labels:
+    name: cart
+spec:
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        name: cart
+    spec:
+      containers:
+      - name: cart
+        image: albanc/weaveworksdemos-cart:toronto-3
+        ports:
+        - containerPort: 80
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: cart
+  labels:
+    name: cart
+spec:
+  ports:
+    # the port that this service should serve on
+  - port: 80
+    targetPort: 80
+  selector:
+    name: cart
+  clusterIP: 10.3.0.43
+---
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: cart-db
+  labels:
+    name: cart-db
+spec:
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        name: cart-db
+    spec:
+      containers:
+      - name: cart-db
+        image: albanc/weaveworksdemos-mongo:toronto-3
+        ports:
+        - name: mongo
+          containerPort: 27017
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: cart-db
+  labels:
+    name: cart-db
+spec:
+  ports:
+    # the port that this service should serve on
+  - port: 27017
+    targetPort: 27017
+  selector:
+    name: cart-db
+  clusterIP: 10.3.0.44
+---
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: catalogue
+  labels:
+    name: catalogue
+spec:
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        name: catalogue
+    spec:
+      containers:
+      - name: catalogue
+        image: albanc/weaveworksdemos-catalogue:toronto-3
+        ports:
+        - containerPort: 80
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: catalogue
+  labels:
+    name: catalogue
+spec:
+  ports:
+    # the port that this service should serve on
+  - port: 80
+    targetPort: 80
+  selector:
+    name: catalogue
+  clusterIP: 10.3.0.45
+---
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: front-end
+spec:
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        name: front-end
+    spec:
+      containers:
+      - name: front-end
+        image: albanc/weaveworksdemos-front-end:2016-08-14
+        resources:
+          requests:
+            cpu: 100m
+            memory: 100Mi
+        ports:
+        - containerPort: 8079
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: front-end
+  labels:
+    name: front-end
+spec:
+  ports:
+  - port: 80
+    targetPort: 8079
+  selector:
+    name: front-end
+  clusterIP: 10.3.0.31
+---  
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: front-end-v2
+spec:
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        name: front-end-v2
+    spec:
+      containers:
+      - name: front-end-v2
+        image: albanc/weaveworksdemos-front-end:2016-08-14-v2
+        resources:
+          requests:
+            cpu: 100m
+            memory: 100Mi
+        ports:
+        - containerPort: 8079
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: front-end-v2
+  labels:
+    name: front-end-v2
+spec:
+  ports:
+  - port: 80
+    targetPort: 8079
+  selector:
+    name: front-end-v2
+  clusterIP: 10.3.0.32
+---
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: login
+  labels:
+    name: login
+spec:
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        name: login
+    spec:
+      containers:
+      - name: login
+        image: albanc/weaveworksdemos-login:toronto-3-dev
+        ports:
+        - containerPort: 80
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: login
+  labels:
+    name: login
+spec:
+  ports:
+    # the port that this service should serve on
+  - port: 80
+    targetPort: 80
+  selector:
+    name: login
+  clusterIP: 10.3.0.46
+---
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: orders
+  labels:
+    name: orders
+spec:
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        name: orders
+    spec:
+      containers:
+      - name: orders
+        image: albanc/weaveworksdemos-orders:toronto-3
+        ports:
+        - containerPort: 80
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: orders
+  labels:
+    name: orders
+spec:
+  ports:
+    # the port that this service should serve on
+  - port: 80
+    targetPort: 80
+  selector:
+    name: orders
+  clusterIP: 10.3.0.47
+---
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: orders-db
+  labels:
+    name: orders-db
+spec:
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        name: orders-db
+    spec:
+      containers:
+      - name: orders-db
+        image: albanc/weaveworksdemos-mongo:toronto-3
+        ports:
+        - name: mongo
+          containerPort: 27017
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: orders-db
+  labels:
+    name: orders-db
+spec:
+  ports:
+    # the port that this service should serve on
+  - port: 27017
+    targetPort: 27017
+  selector:
+    name: orders-db
+  clusterIP: 10.3.0.48
+---
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: payment
+  labels:
+    name: payment
+spec:
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        name: payment
+    spec:
+      containers:
+      - name: payment
+        image: albanc/weaveworksdemos-payment:toronto-3
+        ports:
+        - containerPort: 80
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: payment
+  labels:
+    name: payment
+spec:
+  ports:
+    # the port that this service should serve on
+  - port: 80
+    targetPort: 80
+  selector:
+    name: payment
+  clusterIP: 10.3.0.49
+---
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: queue-master
+  labels:
+    name: queue-master
+spec:
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        name: queue-master
+    spec:
+      containers:
+      - name: queue-master
+        image: albanc/weaveworksdemos-queue-master:toronto-3
+        ports:
+        - containerPort: 80
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: queue-master
+  labels:
+    name: queue-master
+spec:
+  ports:
+    # the port that this service should serve on
+  - port: 80
+    targetPort: 80
+  selector:
+    name: queue-master
+  clusterIP: 10.3.0.50
+---
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: rabbitmq
+  labels:
+    name: rabbitmq
+spec:
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        name: rabbitmq
+    spec:
+      containers:
+      - name: rabbitmq
+        image: albanc/weaveworksdemos-rabbitmq:toronto-3
+        ports:
+        - containerPort: 5672
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: rabbitmq
+  labels:
+    name: rabbitmq
+spec:
+  ports:
+    # the port that this service should serve on
+  - port: 5672
+    targetPort: 5672
+  selector:
+    name: rabbitmq
+  clusterIP: 10.3.0.51
+---
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: shipping
+  labels:
+    name: shipping
+spec:
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        name: shipping
+    spec:
+      containers:
+      - name: shipping
+        image: albanc/weaveworksdemos-shipping:toronto-3
+        ports:
+        - containerPort: 80
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: shipping
+  labels:
+    name: shipping
+spec:
+  ports:
+    # the port that this service should serve on
+  - port: 80
+    targetPort: 80
+  selector:
+    name: shipping
+  clusterIP: 10.3.0.52

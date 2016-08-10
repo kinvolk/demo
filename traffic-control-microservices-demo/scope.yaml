@@ -1,0 +1,96 @@
+apiVersion: v1
+kind: List
+items:
+- apiVersion: v1
+  kind: ReplicationController
+  metadata:
+    name: weavescope-app
+    labels:
+      provider: weavescope-app
+  spec:
+    replicas: 1
+    template:
+      metadata:
+        labels:
+          provider: weavescope-app
+      spec:
+        containers:
+        - name: weavescope-app
+          image: albanc/scope:alban-toronto-3
+          args:
+          - --no-probe
+          ports:
+          - containerPort: 4040
+- apiVersion: v1
+  kind: Service
+  metadata:
+    name: weavescope-app
+    labels:
+      provider: weavescope-app
+  spec:
+    ports:
+    - name: app
+      port: 4040
+    selector:
+      provider: weavescope-app
+    clusterIP: 10.3.0.61
+- apiVersion: v1
+  kind: ReplicationController
+  metadata:
+    name: weavescope-probe
+    labels:
+      k8s-app:  weavescope-probe
+  spec:
+    template:
+      metadata:
+        name:  weavescope-probe
+        labels:
+          k8s-app:  weavescope-probe
+      spec:
+        hostPID: true
+        hostNetwork: true
+        containers:
+        - name:  weavescope-probe
+          image: albanc/scope:alban-toronto-3
+          args:
+          - --no-app
+          - --probe.docker.bridge=docker0
+          - --probe.docker=true
+          - --probe.kubernetes=true
+          - "$(WEAVESCOPE_APP_SERVICE_HOST):$(WEAVESCOPE_APP_SERVICE_PORT)"
+          securityContext:
+            privileged: true
+          volumeMounts:
+          - name: run
+            mountPath: /var/run
+        volumes:
+        - name: run
+          hostPath:
+            path: /var/run
+- apiVersion: v1
+  kind: ReplicationController
+  metadata:
+    name: weavescope-traffic-control-plugin
+    labels:
+      k8s-app:  weavescope-traffic-control-plugin
+  spec:
+    template:
+      metadata:
+        name:  weavescope-traffic-control-plugin
+        labels:
+          k8s-app:  weavescope-traffic-control-plugin
+      spec:
+        hostPID: true
+        hostNetwork: true
+        containers:
+        - name:  weavescope-traffic-control-plugin
+          image: albanc/weavescope-traffic-control-plugin:alban-toronto-3
+          securityContext:
+            privileged: true
+          volumeMounts:
+          - name: run
+            mountPath: /var/run
+        volumes:
+        - name: run
+          hostPath:
+            path: /var/run
