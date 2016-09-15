@@ -79,8 +79,22 @@ And save the following bookmarks in your browser:
 
 ## Demo 3: ginkgo
 
+### Installing ginkgo
+
+To install the BDD testing framework [ginkgo](https://github.com/onsi/ginkgo#set-me-up), do the following:
+
+```
+$ go get github.com/onsi/ginkgo/ginkgo
+$ go get github.com/onsi/gomega
+$ go get github.com/sclevine/agouti
+```
+
+- Install the [`chromedriver`](https://sites.google.com/a/chromium.org/chromedriver/) binary into your `PATH`
+
+### Running the tests
+
 - Ensure that "front-end-v2" is setup with some latency
-- Run ginkgo
+- Run `ginkgo`:
 
 ```
 $ cd weavesocks-test
