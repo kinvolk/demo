@@ -66,8 +66,8 @@ And save the following bookmarks in your browser:
 - Login. You can use `user1/password1`
 - Add the "holy" socks in the cart
 - Refresh (it seems to work)
-- Locate the front-end-v1 container
-- Add latency on front-end-v1
+- Locate the front-end container
+- Add latency on front-end
 - Notice how refreshing the cart page becomes slow
 - Notice that there is no user feedback whether the guestbook is fully loaded
 - Go to "Front-end Patch" in the browser to see how it can be fixed
