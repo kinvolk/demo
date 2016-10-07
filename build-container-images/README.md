@@ -1,6 +1,8 @@
-# Building Container Images
+# Build Container Images
 
 Scripts used at LinuxCon for the talk [Building Container Images](https://goo.gl/CZbhcM).
+
+![Screenshot of build-container-images](build-container-images.png)
 
 ## Dependencies
 
