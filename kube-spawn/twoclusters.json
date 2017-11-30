@@ -16,6 +16,18 @@
     ],
     [
       0.00011,
+      "\u001b[0;33m$ "
+    ],
+    [
+      1.010492,
+      "# LET'S CREATE A TWO NODE DOCKER-BASED KUBERNETES v1.7.5 CLUSTER"
+    ],
+    [
+      12.457331,
+      "\r\n"
+    ],
+    [
+      7e-05,
       "$ "
     ],
     [
@@ -464,7 +476,7 @@
     ],
     [
       0.216091,
-      "2"
+      "2\u001b[0m"
     ],
     [
       0.351536,
@@ -504,7 +516,7 @@
     ],
     [
       1.8e-05,
-      "$ "
+      "\u001b[0;33m$ "
     ],
     [
       0.038864,
@@ -672,7 +684,7 @@
     ],
     [
       8.448199,
-      "\r\n"
+      "\u001b[0m\r\n"
     ],
     [
       0.01479,
@@ -872,10 +884,10 @@
     ],
     [
       0.010596,
-      "\u001b]0;iaguis@locke-xps13:/tmp/demo\u0007$ "
+      "\u001b]0;iaguis@locke-xps13:/tmp/demo\u0007\u001b[0;33m$ "
     ],
     [
-      12.832569,
+      0.832569,
       "m"
     ],
     [
@@ -916,7 +928,7 @@
     ],
     [
       0.457331,
-      "\r\n"
+      "\u001b[0m\r\n"
     ],
     [
       0.024003,
@@ -932,10 +944,10 @@
     ],
     [
       7e-05,
-      "$ "
+      "\u001b[0;33m$ "
     ],
     [
-      8.932274,
+      4.932274,
       "e"
     ],
     [
@@ -1268,7 +1280,7 @@
     ],
     [
       0.408139,
-      "\r\n"
+      "\u001b[0m\r\n"
     ],
     [
       0.130063,
@@ -1284,7 +1296,7 @@
     ],
     [
       3.2e-05,
-      "$ "
+      "\u001b[0;33m$ "
     ],
     [
       0.849478,
@@ -1356,15 +1368,27 @@
     ],
     [
       0.614557,
-      "\r\n"
+      "\u001b[0m\r\n"
     ],
     [
       0.177052,
-      "NAME                      STATUS     ROLES     AGE       VERSION\r\nkubespawndockercluster0   NotReady   master    38s       v1.7.5\r\nkubespawndockercluster1   NotReady   <none>    18s       v1.7.5\r\n"
+      "NAME                      STATUS     ROLES     AGE       VERSION\r\nkubespawndockercluster0   Ready   master    2m       v1.7.5\r\nkubespawndockercluster1   Ready   <none>    1m       v1.7.5\r\n"
     ],
     [
       0.002502,
-      "\u001b]0;iaguis@locke-xps13:/tmp/demo\u0007$ "
+      "\u001b]0;iaguis@locke-xps13:/tmp/demo\u0007\u001b[0;33m$ "
+    ],
+    [
+      1.010492,
+      "# YAY! WE HAVE A TWO-NODE CLUSTER"
+    ],
+    [
+      12.457331,
+      "\r\n"
+    ],
+    [
+      7e-05,
+      "$ "
     ],
     [
       0.956395,
@@ -1500,7 +1524,7 @@
     ],
     [
       0.691884,
-      "\r\n"
+      "\u001b[0m\r\n"
     ],
     [
       0.185201,
@@ -1560,10 +1584,22 @@
     ],
     [
       2.1e-05,
+      "\u001b[0;33m$ "
+    ],
+    [
+      1.010492,
+      "# ALL THE KUBE-SYSTEM PODS ARE RUNNING NOW. THE CLUSTER IS READY"
+    ],
+    [
+      12.457331,
+      "\r\n"
+    ],
+    [
+      7e-05,
       "$ "
     ],
     [
-      8.052167,
+      0.352167,
       "k"
     ],
     [
@@ -1712,7 +1748,7 @@
     ],
     [
       0.600226,
-      "\r\n"
+      "\u001b[0m\r\n"
     ],
     [
       0.182333,
@@ -1724,7 +1760,7 @@
     ],
     [
       1.9e-05,
-      "$ "
+      "\u001b[0;33m$ "
     ],
     [
       0.999618,
@@ -1792,7 +1828,7 @@
     ],
     [
       0.000562,
-      "\r\n"
+      "\u001b[0m\r\n"
     ],
     [
       0.187664,
@@ -1800,7 +1836,7 @@
     ],
     [
       0.003596,
-      "\u001b]0;iaguis@locke-xps13:/tmp/demo\u0007$ "
+      "\u001b]0;iaguis@locke-xps13:/tmp/demo\u0007\u001b[0;33m$ "
     ],
     [
       0.927316,
@@ -1808,7 +1844,7 @@
     ],
     [
       0.832342,
-      "\r\n"
+      "\u001b[0m\r\n"
     ],
     [
       0.165666,
@@ -1820,7 +1856,7 @@
     ],
     [
       4.6e-05,
-      "$ "
+      "\u001b[0;33m$ "
     ],
     [
       0.223995,
@@ -2052,7 +2088,7 @@
     ],
     [
       0.520531,
-      "\r\n"
+      "\u001b[0m\r\n"
     ],
     [
       0.282602,
@@ -2064,6 +2100,18 @@
     ],
     [
       9.5e-05,
+      "\u001b[0;33m$ "
+    ],
+    [
+      1.010492,
+      "# WE CREATED AN NGINX POD AND EXPOSED IT THROUGH A SERVICE"
+    ],
+    [
+      12.457331,
+      "\r\n"
+    ],
+    [
+      7e-05,
       "$ "
     ],
     [
@@ -2148,7 +2196,7 @@
     ],
     [
       0.288074,
-      "\r\n"
+      "\u001b[0;33m\r\n"
     ],
     [
       0.129797,
@@ -2232,7 +2280,7 @@
     ],
     [
       2.1e-05,
-      "$ "
+      "\u001b[0;33m$ "
     ],
     [
       2.331121,
@@ -2276,7 +2324,7 @@
     ],
     [
       0.415938,
-      "\r\n"
+      "\u001b[0m\r\n"
     ],
     [
       0.006266,
@@ -2292,7 +2340,19 @@
     ],
     [
       0.000782,
-      "\u001b]0;iaguis@locke-xps13:/tmp/demo\u0007$ "
+      "\u001b]0;iaguis@locke-xps13:/tmp/demo\u0007\u001b[0;33m$ "
+    ],
+    [
+      1.010492,
+      "# LET'S TRY TO ACCESS THE SERVICE"
+    ],
+    [
+      12.457331,
+      "\r\n"
+    ],
+    [
+      7e-05,
+      "$ "
     ],
     [
       6.86271,
@@ -2301,22 +2361,6 @@
     [
       0.096161,
       "u"
-    ],
-    [
-      0.184248,
-      "t"
-    ],
-    [
-      0.000145,
-      "r"
-    ],
-    [
-      0.51974,
-      "\b\u001b[K"
-    ],
-    [
-      0.135707,
-      "\b\u001b[K"
     ],
     [
       0.111966,
@@ -2392,7 +2436,7 @@
     ],
     [
       8.599787,
-      "\r\n"
+      "\u001b[0m\r\n"
     ],
     [
       0.006011,
@@ -2404,6 +2448,30 @@
     ],
     [
       3.2e-05,
+      "\u001b[0;33m$ "
+    ],
+    [
+      1.010492,
+      "# IT WORKS!"
+    ],
+    [
+      12.457331,
+      "\r\n"
+    ],
+    [
+      7e-05,
+      "$ "
+    ],
+    [
+      1.010492,
+      "# LET'S TRY NOW A THREE NODE RKT-BASED KUBERNETES v1.8.3 CLUSTER"
+    ],
+    [
+      12.457331,
+      "\r\n"
+    ],
+    [
+      7e-05,
       "$ "
     ],
     [
@@ -3540,7 +3608,7 @@
     ],
     [
       0.60829,
-      "\r\n"
+      "\u001b[0m\r\n"
     ],
     [
       0.024873,
@@ -3576,7 +3644,7 @@
     ],
     [
       7.6e-05,
-      "$ "
+      "\u001b[0;33m$ "
     ],
     [
       0.701048,
@@ -3732,7 +3800,7 @@
     ],
     [
       8.281209,
-      "\r\n"
+      "\u001b[0m\r\n"
     ],
     [
       0.027812,
@@ -4056,7 +4124,7 @@
     ],
     [
       0.000257,
-      "\u001b]0;iaguis@locke-xps13:/tmp/demo\u0007$ "
+      "\u001b]0;iaguis@locke-xps13:/tmp/demo\u0007\u001b[0;33m$ "
     ],
     [
       6.866246,
@@ -4100,7 +4168,7 @@
     ],
     [
       0.487439,
-      "\r\n"
+      "\u001b[0m\r\n"
     ],
     [
       0.006679,
@@ -4116,7 +4184,7 @@
     ],
     [
       9.9e-05,
-      "$ "
+      "\u001b[0;33m$ "
     ],
     [
       6.623669,
@@ -4359,6 +4427,18 @@
       "\r\n\u001b]0;iaguis@locke-xps13:/tmp/demo\u0007$ "
     ],
     [
+      1.010492,
+      "# LET'S MAKE SURE IT REALLY IS A RKT CLUSTER"
+    ],
+    [
+      12.457331,
+      "\r\n"
+    ],
+    [
+      7e-05,
+      "$ "
+    ],
+    [
       0.769584,
       "k"
     ],
@@ -4556,7 +4636,7 @@
     ],
     [
       0.375951,
-      "\r\n"
+      "\u001b[0m\r\n"
     ],
     [
       0.178968,
@@ -4568,7 +4648,7 @@
     ],
     [
       0.000107,
-      "$ "
+      "\u001b[0;33m$ "
     ],
     [
       0.716113,
@@ -4640,7 +4720,7 @@
     ],
     [
       0.640337,
-      "\r\n"
+      "\u001b[0m\r\n"
     ],
     [
       1.023561,
@@ -4656,6 +4736,30 @@
     ],
     [
       3.2e-05,
+      "\u001b[0;33m$ "
+    ],
+    [
+      1.010492,
+      "# THE NEW CLUSTER IS READY"
+    ],
+    [
+      12.457331,
+      "\r\n"
+    ],
+    [
+      7e-05,
+      "$ "
+    ],
+    [
+      1.010492,
+      "# BUT WE CAN SWITCH BACK AND FORTH BETWEEN CLUSTERS"
+    ],
+    [
+      12.457331,
+      "\r\n"
+    ],
+    [
+      7e-05,
       "$ "
     ],
     [
@@ -4760,7 +4864,7 @@
     ],
     [
       0.520012,
-      "\r\n"
+      "\u001b[0m\r\n"
     ],
     [
       0.161777,
@@ -4776,7 +4880,7 @@
     ],
     [
       9e-05,
-      "$ "
+      "\u001b[0;33m$ "
     ],
     [
       6.38819,
@@ -4980,7 +5084,7 @@
     ],
     [
       0.495763,
-      "\r\n"
+      "\u001b[0m\r\n"
     ],
     [
       0.264511,
@@ -5032,7 +5136,7 @@
     ],
     [
       0.000112,
-      "$ "
+      "\u001b[0;33m$ "
     ],
     [
       8.066923,
@@ -5160,7 +5264,7 @@
     ],
     [
       0.848902,
-      "\r\n"
+      "\u001b[0m\r\n"
     ],
     [
       0.284103,
@@ -5172,7 +5276,7 @@
     ],
     [
       0.00011,
-      "$ "
+      "\u001b[0;33m$ "
     ],
     [
       0.15992,
@@ -5240,7 +5344,7 @@
     ],
     [
       0.031424,
-      "\r\n"
+      "\u001b[0m\r\n"
     ],
     [
       0.40004,
@@ -5248,7 +5352,7 @@
     ],
     [
       0.00263,
-      "\u001b]0;iaguis@locke-xps13:/tmp/demo\u0007$ "
+      "\u001b]0;iaguis@locke-xps13:/tmp/demo\u0007\u001b[0;33m$ "
     ],
     [
       0.90223,
@@ -5256,7 +5360,7 @@
     ],
     [
       0.375789,
-      "\r\n"
+      "\u001b[0m\r\n"
     ],
     [
       0.181044,
@@ -5272,7 +5376,7 @@
     ],
     [
       0.000122,
-      "$ "
+      "\u001b[0;33m$ "
     ],
     [
       0.159577,
@@ -5536,7 +5640,7 @@
     ],
     [
       0.480165,
-      "\r\n"
+      "\u001b[0m\r\n"
     ],
     [
       0.441086,
@@ -5548,6 +5652,18 @@
     ],
     [
       4e-05,
+      "\u001b[0;33m$ "
+    ],
+    [
+      1.010492,
+      "# WE EXPOSED AN NGINX SERVICE, JUST LIKE BEFORE"
+    ],
+    [
+      12.457331,
+      "\r\n"
+    ],
+    [
+      7e-05,
       "$ "
     ],
     [
@@ -5632,7 +5748,7 @@
     ],
     [
       0.144035,
-      "\r\n"
+      "\u001b[0m\r\n"
     ],
     [
       0.226757,
@@ -5788,7 +5904,7 @@
     ],
     [
       0.000243,
-      "$ "
+      "\u001b[0;33m$ "
     ],
     [
       0.300207,
@@ -5832,7 +5948,7 @@
     ],
     [
       0.168424,
-      "\r\n"
+      "\u001b[0m\r\n"
     ],
     [
       0.007076,
@@ -5840,7 +5956,19 @@
     ],
     [
       0.008266,
-      "MACHINE                 CLASS     SERVICE        OS     VERSION  ADDRESSES\u001b[m\r\nkubespawndockercluster0 container systemd-nspawn coreos 1562.0.0 10.22.0.2...\u001b[m\r\nkubespawndockercluster1 container systemd-nspawn coreos 1562.0.0 10.22.0.3...\u001b[m\r\nkubespawnrktcluster0    container systemd-nspawn coreos 1562.0.0 10.22.0.5...\u001b[m\r\nkubespawnrktcluster1    container systemd-nspawn coreos 1562.0.0 10.22.0.4...\u001b[m\r\nkubespawnrktcluster2    container systemd-nspawn coreos 1562.0.0 10.22.0.6...\u001b[m\r\n\u001b[m\r\n5 machines listed.\u001b[m\r\n\r\u001b[K\u001b[?1l\u001b>\u001b]0;iaguis@locke-xps13:/tmp/demo\u0007$ "
+      "MACHINE                 CLASS     SERVICE        OS     VERSION  ADDRESSES\u001b[m\r\nkubespawndockercluster0 container systemd-nspawn coreos 1562.0.0 10.22.0.2...\u001b[m\r\nkubespawndockercluster1 container systemd-nspawn coreos 1562.0.0 10.22.0.3...\u001b[m\r\nkubespawnrktcluster0    container systemd-nspawn coreos 1562.0.0 10.22.0.5...\u001b[m\r\nkubespawnrktcluster1    container systemd-nspawn coreos 1562.0.0 10.22.0.4...\u001b[m\r\nkubespawnrktcluster2    container systemd-nspawn coreos 1562.0.0 10.22.0.6...\u001b[m\r\n\u001b[m\r\n5 machines listed.\u001b[m\r\n\r\u001b[K\u001b[?1l\u001b>\u001b]0;iaguis@locke-xps13:/tmp/demo\u0007\u001b[0;33m$ "
+    ],
+    [
+      1.010492,
+      "# LET'S SEE IF IT ALSO WORKS"
+    ],
+    [
+      12.457331,
+      "\r\n"
+    ],
+    [
+      7e-05,
+      "$ "
     ],
     [
       0.38494,
@@ -5924,7 +6052,7 @@
     ],
     [
       8.576087,
-      "\r\n"
+      "\u001b[0m\r\n"
     ],
     [
       0.00704,
@@ -5987,8 +6115,20 @@
       "</html>\r\n"
     ],
     [
-      8.000932,
-      "\u001b]0;iaguis@locke-xps13:/tmp/demo\u0007$ "
+      0.300932,
+      "\u001b]0;iaguis@locke-xps13:/tmp/demo\u0007\u001b[0;33m$ "
+    ],
+    [
+      1.010492,
+      "# GREAT! IT WORKS JUST LIKE BEFORE!"
+    ],
+    [
+      12.457331,
+      "\r\n"
+    ],
+    [
+      7e-05,
+      "$ \u001b[0m"
     ]
   ]
 }
